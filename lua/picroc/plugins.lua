@@ -19,8 +19,16 @@ require('packer').startup(function(use)
 	use 'plasticboy/vim-markdown'
 	use 'airblade/vim-gitgutter'
 	use 'nvim-lualine/lualine.nvim'
-	use 'scrooloose/nerdtree'
 	use 'ryanoasis/vim-devicons'
+	use {'akinsho/bufferline.nvim', tag = "v3.*", requires = 'nvim-tree/nvim-web-devicons'}
+	use {
+  	'nvim-tree/nvim-tree.lua',
+  	requires = {
+    	'nvim-tree/nvim-web-devicons', -- optional, for file icons
+  	},
+  	tag = 'nightly' -- optional, updated every week. (see issue #1193)
+	}
+	use 'tpope/vim-fugitive'
 
 	if install_plugins then
 		require('packer').sync()
@@ -38,8 +46,29 @@ require('lualine').setup({
 	}
 })
 
-vim.g.NERDTreeShowHidden = 1
-vim.g.NERDTreeMinimalUI = 1
-vim.g.NERDTreeIgnore = {}
-vim.g.NERDTreeStatusline = ''
-vim.cmd([[nnoremap <silent> <C-b> :NERDTreeToggle<CR>]])
+require("bufferline").setup({
+	options = {
+		offsets = {
+					{
+							filetype = "NvimTree",
+							text = "File Explorer",
+							text_align = "left",
+							separator = true,
+					}
+		},
+	}
+})
+
+require("nvim-tree").setup({
+  sort_by = "case_sensitive",
+  view = {
+    adaptive_size = true,
+  },
+  renderer = {
+    group_empty = true,
+  },
+  filters = {
+    dotfiles = true,
+  },
+})
+

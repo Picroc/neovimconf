@@ -1,4 +1,5 @@
 {
+	"typescript.preferences.noSemicolons": true,
 	"Lua.diagnostics.globals": [
 		"vim"
 	]
