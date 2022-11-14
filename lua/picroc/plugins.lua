@@ -20,7 +20,6 @@ require('packer').startup(function(use)
 	use 'airblade/vim-gitgutter'
 	use 'nvim-lualine/lualine.nvim'
 	use 'ryanoasis/vim-devicons'
-	use {'akinsho/bufferline.nvim', tag = "v3.*", requires = 'nvim-tree/nvim-web-devicons'}
 	use {
   	'nvim-tree/nvim-tree.lua',
   	requires = {
@@ -43,19 +42,6 @@ end
 require('lualine').setup({
 	options = {
 		theme = 'gruvbox',
-	}
-})
-
-require("bufferline").setup({
-	options = {
-		offsets = {
-					{
-							filetype = "NvimTree",
-							text = "File Explorer",
-							text_align = "left",
-							separator = true,
-					}
-		},
 	}
 })
 

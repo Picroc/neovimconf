@@ -10,6 +10,9 @@ vim.opt.tabstop = 2
 vim.opt.shiftwidth = 2
 vim.opt.expandtab = false
 
+vim.opt.splitbelow = true
+vim.opt.splitright = true
+
 vim.keymap.set('n', '<space>w', '<cmd>w<cr>', {desc = 'Save'})
 vim.g.mapleader = ' '
 vim.opt.termguicolors = true
