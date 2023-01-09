@@ -8,6 +8,7 @@ keymap.set('n', '<C-h>', '<C-w>h')
 keymap.set('n', '<C-j>', '<C-w>j')
 keymap.set('n', '<C-k>', '<C-w>k')
 keymap.set('n', '<C-l>', '<C-w>l')
+keymap.set('n', '<C-/>', ':ToggleTerm direction=float<Return>')
 
 keymap.set('n', 'gd', '<Plug>(coc-definition)')
 keymap.set('n', 'gi', '<Plug>(coc-implementation)')

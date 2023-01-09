@@ -30,6 +30,12 @@ require('packer').startup(function(use)
 	use 'tpope/vim-fugitive'
 	use { 'junegunn/fzf', run = ":call fzf#install()" }
   use { 'junegunn/fzf.vim' }
+	use {"akinsho/toggleterm.nvim", tag = '*', config = function()
+    require("toggleterm").setup{
+			shell = vim.o.zsh,
+			direction = 'float',
+		}
+  end}
 
 	if install_plugins then
 		require('packer').sync()
