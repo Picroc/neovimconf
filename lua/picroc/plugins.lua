@@ -28,6 +28,8 @@ require('packer').startup(function(use)
   	tag = 'nightly' -- optional, updated every week. (see issue #1193)
 	}
 	use 'tpope/vim-fugitive'
+	use { 'junegunn/fzf', run = ":call fzf#install()" }
+  use { 'junegunn/fzf.vim' }
 
 	if install_plugins then
 		require('packer').sync()

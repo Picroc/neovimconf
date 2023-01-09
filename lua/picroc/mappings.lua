@@ -10,7 +10,7 @@ keymap.set('n', '<C-k>', '<C-w>k')
 keymap.set('n', '<C-l>', '<C-w>l')
 
 keymap.set('n', 'gd', '<Plug>(coc-definition)')
-keymap.set('n', 'gd', '<Plug>(coc-implementation)')
+keymap.set('n', 'gi', '<Plug>(coc-implementation)')
 keymap.set('n', 'gy', '<Plug>(coc-type-definition)')
 keymap.set('n', 'gr', '<Plug>(coc-references)')
 
